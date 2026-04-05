@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.env
+.env
+venv/
+*.db
+*.sqlite
+*.log
+*.DS_Store
+C:/Users/qalab.abbas/.ollama/   # DO NOT push models

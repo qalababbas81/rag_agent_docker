@@ -1,0 +1,21 @@
+{
+  "messages": [
+    {
+      "type": "human",
+      "content": "What is leave policy?"
+    },
+    {
+      "type": "ai",
+      "content": "According to Source 2: Acme Corp - Leave Policy, the leave policy is as follows:\n\n1. Annual Leave: Employees are entitled to 15 days of paid annual leave per year.\n2. Sick Leave: Employees may take up to 10 days of paid sick leave annually with medical documentation if required.\n3. Emergency Leave (no specific details provided)\n\nAdditionally, according to Source 1: Carry Forward Policy, unused leave days may be carried forward up to a maximum of 5 days into the next year."
+    },
+    {
+      "type": "human",
+      "content": "What is refund policy?"
+    },
+    {
+      "type": "ai",
+      "content": "According to Source 6: Sample Company Policy PDF Content, the refund policy is as follows:\n\n\"Customers may request a refund within 30 days of purchase. Refunds will be processed within 7 days.\""
+    }
+  ],
+  "summary": ""
+}

@@ -1,0 +1,100 @@
+rm -r venv
+python -m venv venv
+venv\Scripts\activate
+
+python -m pip install --upgrade pip
+
+pip install fastapi uvicorn
+python -c "import fastapi; print('OK')"
+
+pip install langchain langchain-community langchain-ollama langgraph
+python -c "import langchain; import langchain_community; print('OK')"
+
+pip install pypdf docx2txt chromadb ollama pyodbc
+python -c "import chromadb, docx2txt, pypdf; print('OK')"
+
+uvicorn main:app --reload
+
+pip freeze > requirements.lock.txt
+
+ollama pull llama3.1
+
+docker exec -it ollama /bin/bash
+ls /root/.ollama/models 👉 Expected:blobs manifests
+ollama list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+where python   / Get-Command python
+python --version
+where pip  / Get-Command pip
+
+
+🚀 Excited to share our latest AI Project milestone!
+
+Over the past few weeks, our team has been building an intelligent enterprise AI assistant – and it’s finally live! 🎉
+
+Here’s what we’ve achieved so far:
+
+✅ Milestone 1: Agent Skeleton – The backbone of our assistant is ready.
+✅ Milestone 2: Document RAG – Smart retrieval from multiple company documents.
+🔄 Milestone 3: SQL Tool – Query employee data and company info seamlessly.
+⏳ Milestone 4: Validation Node – Ensuring accurate and verified answers.
+✅ Milestone 5: Multi-user Session Memory – Remembering conversations per user, with summarization!
+⏳ Milestone 6: Streaming – Real-time answer delivery coming soon.
+🛠 Milestone 7: Dockerization – Fully containerized for easy deployment.
+
+💡 Key Features:
+
+Combines RAG (Retrieval-Augmented Generation) and SQL querying.
+Handles multi-user sessions with memory + summarization.
+Provides verified, context-based answers only (no hallucinations!).
+Built with offline Ollama LLM for privacy & local performance.
+Future-ready with streaming responses & Docker deployment.
+
+🌐 How it works:
+
+User asks a question via API.
+AI decides: use SQL or RAG docs.
+Context is retrieved, validated, and processed.
+Answer returned & session memory updated dynamically.
+
+🔥 Why it matters:
+Our AI assistant can replace manual document searches, simplify internal data queries, and deliver accurate answers instantly – all while being privacy-focused.
+
+///////////////////////////////////////////
+
+Excited to share my latest project – a Retrieval-Augmented Generation (RAG) Agent with FastAPI, LangChain, and Ollama!
+
+🐳 The project is fully dockerized, making deployment easy and consistent across environments.
+
+⚡ Challenges tackled:
+
+Integrating local Ollama models inside Docker
+Handling Python dependency versions (uvicorn, fastapi)
+Configuring Docker Compose volumes for persistent AI models
+
+✅ Final setup:
+
+rag_app serving FastAPI at http://localhost:8000/docs
+Ollama running with offline embeddings
+SQL Server integration for vector storage
+
+This project is a great example of AI + Docker + DevOps synergy.
+
+Pro Tip: On LinkedIn, you can share the Docker link or screenshots by:
+
+Showing localhost:8000/docs in a browser screenshot.
+Sharing your GitHub repo link with Dockerfile + docker-compose.yml.
+

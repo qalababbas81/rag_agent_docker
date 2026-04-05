@@ -1,0 +1,69 @@
+{
+  "messages": [
+    {
+      "type": "human",
+      "content": "What is the leave policy?"
+    },
+    {
+      "type": "ai",
+      "content": "According to Source 2: Acme Corp - Leave Policy, the leave policy is as follows:\n\n1. Annual Leave: Employees are entitled to 15 days of paid annual leave per year.\n2. Sick Leave: Employees may take up to 10 days of paid sick leave annually with medical documentation if required.\n3. Emergency Leave (no specific details provided in the given context)\n\nAdditionally, according to Source 1: Carry Forward Policy, unused leave days may be carried forward up to a maximum of 5 days into the next year."
+    },
+    {
+      "type": "human",
+      "content": "SELECT TOP 5 * FROM Employees"
+    },
+    {
+      "type": "ai",
+      "content": "Information not available in documents."
+    },
+    {
+      "type": "human",
+      "content": "Show me top 5 employees"
+    },
+    {
+      "type": "ai",
+      "content": "Information not available in documents."
+    },
+    {
+      "type": "human",
+      "content": "Show me top 5 employees"
+    },
+    {
+      "type": "ai",
+      "content": "Information not available in documents."
+    },
+    {
+      "type": "human",
+      "content": "Show me top 5 employees"
+    },
+    {
+      "type": "ai",
+      "content": "Information not available in documents."
+    },
+    {
+      "type": "human",
+      "content": "Show me top 5 employees"
+    },
+    {
+      "type": "ai",
+      "content": "According to the SQL Query Result, the top 5 employees are:\n\n1. Image Employee (2007)\n2. Abbas (2006)\n3. QQQ (2005)\n4. QQ (2004)\n5. Saad (1007)"
+    },
+    {
+      "type": "human",
+      "content": "Show me top 5 employees"
+    },
+    {
+      "type": "ai",
+      "content": "Information not available in provided data."
+    },
+    {
+      "type": "human",
+      "content": "Show me top 5 employees"
+    },
+    {
+      "type": "ai",
+      "content": "To determine the top 5 employees, I'll need to define what \"top\" means in this context. Since there's no specific criteria provided, I'll assume it means the employees with the highest ID numbers.\n\nHere are the top 5 employees based on their ID numbers:\n\n1. ID: 2007, Name: Image Employee, Email: img@gmail.com, Address: Paginated Address\n2. ID: 2006, Name: Abbas, Email: a@gmail.com, Address: Olaya Riyadh\n3. ID: 2005, Name: QQQ, Email: qq@gmail.com, Address: Pakistan Rawat1\n4. ID: 2004, Name: QQ, Email: qq@gmail.com, Address: 123 Main Street23\n5. ID: 1007, Name: Saad, Email: hassan@gmail.com, Address: KSA Riyadh Harra"
+    }
+  ],
+  "summary": ""
+}

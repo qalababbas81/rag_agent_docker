@@ -2,38 +2,6 @@
   "messages": [
     {
       "type": "human",
-      "content": "What are IT Guidelines for the company?"
-    },
-    {
-      "type": "ai",
-      "content": "Information not available in provided data."
-    },
-    {
-      "type": "human",
-      "content": "What are IT Guidelines?"
-    },
-    {
-      "type": "ai",
-      "content": "Information not available in provided data."
-    },
-    {
-      "type": "human",
-      "content": "What are IT Guidelines?"
-    },
-    {
-      "type": "ai",
-      "content": "Based on the provided context, I found the relevant information in Source 1 and Source 2.\n\nFrom Source 1, Section 5: IT Policy, it is mentioned that \"All employees must maintain confidentiality of company information. Disclosure to outside parties is strictly prohibited.\"\n\nFrom Source 2, Section 5: Software Installation, it is mentioned that \"Only approved software may be installed on company systems.\"\n\nTherefore, the IT Guidelines are:\n\n1. Maintain confidentiality of company information.\n2. Only approved software may be installed on company systems.\n\nInformation not available in provided data regarding any additional IT guidelines."
-    },
-    {
-      "type": "human",
-      "content": "Explain leave and refund policies."
-    },
-    {
-      "type": "ai",
-      "content": "Based on the provided context, here's an explanation of the leave and refund policies:\n\n**Leave Policy:**\n\n* Employees are entitled to 15 days of paid leave per year (Source 4).\n* Requests for leave must be submitted at least 2 weeks in advance via the HR portal (Source 5).\n* Unused leave days may be carried forward up to a maximum of 5 days into the next year (Source 1).\n* Emergency leave may be granted with manager approval depending on circumstances (Source 5).\n* Requests for leave must be submitted at least 2 weeks in advance via the HR portal (Source 4).\n\n**Refund Policy:**\n\n* Customers may request a refund within 30 days of purchase (Source 6).\n* Refunds will be processed within 7 business days (Source 6).\n* Original receipts are required for refunds (Source 4).\n\nNote that there is no information provided about refund policies for employees, only for customers."
-    },
-    {
-      "type": "human",
       "content": "What are IT guidelines?"
     },
     {
@@ -79,7 +47,39 @@
     {
       "type": "ai",
       "content": "The error \"string index out of range\" typically occurs when trying to access a character in a string that does not exist. However, this is an SQL execution error, and the query provided is a SELECT statement.\n\nGiven the context, it's likely that the error occurred because the query being executed was not the one shown (SELECT TOP 5 * FROM Employees). The actual query might be trying to access a column or value as if it were a string, resulting in the \"string index out of range\" error.\n\nTo provide more information, I would need to see the actual SQL query that caused the error. However, based on the provided context, I can suggest checking the actual query being executed and looking for any string operations that might be causing the issue.\n\nIf you'd like to share the actual SQL query or more details about the database schema, I may be able to provide a more specific answer."
+    },
+    {
+      "type": "human",
+      "content": "what is the leave policy"
+    },
+    {
+      "type": "ai",
+      "content": "According to Source 1, the Leave Policy states: \"Employees are entitled to 15 days of paid leave per year. Requests must be submitted 2 weeks in advance.\""
+    },
+    {
+      "type": "human",
+      "content": "give me top 5 employee Data"
+    },
+    {
+      "type": "ai",
+      "content": "To provide the top 5 employee data, I will sort the database query result by ID in descending order and select the top 5 records.\n\nHere are the top 5 employee data:\n\n1. ID: 2007, Name: Image Employee, Email: img@gmail.com, Address: Paginated Address\n2. ID: 2006, Name: Abbas, Email: a@gmail.com, Address: Olaya Riyadh\n3. ID: 2005, Name: QQQ, Email: qq@gmail.com, Address: Pakistan Rawat1\n4. ID: 2004, Name: QQ, Email: qq@gmail.com, Address: 123 Main Street23\n5. ID: 1007, Name: Saad, Email: hassan@gmail.com, Address: KSA Riyadh Harra"
+    },
+    {
+      "type": "human",
+      "content": "what is leave policy and company policy"
+    },
+    {
+      "type": "ai",
+      "content": "Based on the provided context, I can answer the user's question as follows:\n\n**Leave Policy:**\nAccording to Source 2: Acme Corp - Leave Policy, the leave policy is as follows:\n\n* Annual Leave: 15 days of paid annual leave per year\n* Sick Leave: up to 10 days of paid sick leave annually with medical documentation if required\n* Emergency Leave: (no specific details provided)\n* Carry Forward Policy: Unused leave days may be carried forward up to a maximum of 5 days into the next year (Source 6)\n\n**Company Policy:**\nAccording to Source 5: Sample Company Policy PDF Content, the company policy is as follows:\n\n* Refund Policy: Customers may request a refund within 30 days of purchase. Refunds will be processed within 7 days.\n\nAdditionally, from Source 4: Confidentiality and IT Policy, we can infer that the company policy also includes:\n\n* Confidentiality: All employees must maintain confidentiality of company information. Disclosure to outside parties is strictly prohibited.\n* IT Policy: Company devices must be used for official purposes only. Personal use should be minimal and comply with IT guidelines.\n* Health & Safety: Employees must follow safety protocols at all times. Accidents must be reported to HR."
+    },
+    {
+      "type": "human",
+      "content": "What is company policy and what is the leave policy"
+    },
+    {
+      "type": "ai",
+      "content": "Based on the provided context, I can answer the user's question as follows:\n\n**Company Policy:**\nAccording to Source 3 (IT Policy), company devices must be used for official purposes only. Personal use should be minimal and comply with IT guidelines. Additionally, employees must follow safety protocols at all times and report accidents to HR immediately (Source 3, Health & Safety).\n\n**Leave Policy:**\nAccording to Source 2 (Acme Corp - Leave Policy), the leave policy is as follows:\n\n* Annual Leave: Employees are entitled to 15 days of paid annual leave per year.\n* Sick Leave: Employees may take up to 10 days of paid sick leave annually with medical documentation if required.\n* Emergency Leave: (No specific details provided)\n* Carry Forward Policy: Unused leave days may be carried forward up to a maximum of 5 days into the next year (Source 6, Carry Forward Policy)."
     }
   ],
-  "summary": "There is no conversation to summarize. The text appears to be a response from an AI system indicating that it doesn't have access to certain information, but there is no preceding conversation or context."
+  "summary": "Here is a 3-sentence summary of the conversation:\n\nThe company's leave policy allows employees to take 15 days of paid leave per year, with unused days carrying over up to 5 days into the next year. Requests for leave must be submitted 2 weeks in advance through the HR portal, with emergency leave possible with manager approval. The company's refund policy applies to customers, allowing them to request a refund within 30 days of purchase with original receipts required."
 }

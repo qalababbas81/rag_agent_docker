@@ -97,4 +97,28 @@ Pro Tip: On LinkedIn, you can share the Docker link or screenshots by:
 
 Showing localhost:8000/docs in a browser screenshot.
 Sharing your GitHub repo link with Dockerfile + docker-compose.yml.
+Adding a small GIF showing the API running in Docker for engagement.
 
+If you want, I can also write a ready-to-post, short, eye-catching LinkedIn post with emojis and hashtags that highlights all this in less than 200 words.
+
+Do you want me to do that next?
+
+
+https://github.com/qalababbas81/rag_agent_docker
+
+/////////////////////////////////////////////////////
+
+Headline: 🚀 Built a Private "Enterprise AI Knowledge Agent" using Local LLMs!
+Data privacy is the biggest hurdle for AI adoption in the enterprise. I just completed a project that solves this by running everything locally—no data ever leaves the machine.
+The Tech Stack:
+🐍 Python/FastAPI - High-performance backend
+🦜 LangChain & LangGraph - Agentic orchestration
+🦙 Ollama (Llama 3.1) - Running inference on-premise
+🐳 Docker - Containerized for easy deployment
+🗄️ MS SQL Server & ChromaDB - Hybrid retrieval from structured & unstructured data
+Key Features:
+✅ Privacy First: All processing happens locally via Ollama.
+✅ Hybrid RAG: The agent can "chat" with PDFs and query live SQL databases simultaneously.
+✅ Scalable: Fully containerized with Docker Compose.
+📂 Check out the code on GitHub: github.com
+#AI #GenerativeAI #RAG #Ollama #Python #Docker #DataPrivacy #MachineLearning

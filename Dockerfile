@@ -27,6 +27,7 @@ COPY requirements.txt .
 # Upgrade pip & install dependencies
 RUN python -m pip install --upgrade pip
 RUN pip install --no-cache-dir --force-reinstall -r requirements.txt
+#RUN pip install --no-cache-dir --upgrade-strategy only-if-needed -r requirements.txt
 
 # Copy project files
 COPY . .

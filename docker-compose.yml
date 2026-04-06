@@ -1,6 +1,18 @@
 version: "3.9"
 
 services:
+  
+  ui:
+    build: .
+    container_name: rag_ui
+    ports:
+      - "8501:8501"
+    depends_on:
+      - app
+    volumes:
+      - .:/app
+    command: ["streamlit", "run", "app_ui.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+
   app:
     build: .
     container_name: rag_app
@@ -12,8 +24,8 @@ services:
     environment:
       - OLLAMA_HOST=http://ollama:11434
       - DB_CONNECTION=Driver={ODBC Driver 18 for SQL Server};Server=sqlserver;Database=DemoDB;UID=sa;PWD=KSAcs321;TrustServerCertificate=yes;
-    volumes:
-      - .:/app
+    # volumes:
+    #   - .:/app
 
   ollama:
     image: ollama/ollama
@@ -22,17 +34,26 @@ services:
       - "11434:11434"
     volumes:
       - /c/Users/qalab.abbas/.ollama:/root/.ollama
-
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sqlserver
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=KSAcs321
+      - MSSQL_SA_PASSWORD=KSAcs321
     ports:
       - "1434:1433"
     volumes:
       - sql_data:/var/opt/mssql
+
+  sql-init:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    depends_on:
+      - sqlserver
+    volumes:
+      - ./init.sql:/init.sql
+    # This command waits for SQL to start, then runs the script
+    command: >
+      bash -c "sleep 30s && /opt/mssql-tools18/bin/sqlcmd -S sqlserver -U sa -P 'KSAcs321' -d master -i /init.sql -C"    
 
 volumes:
   ollama_data:

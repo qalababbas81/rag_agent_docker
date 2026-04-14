@@ -5,7 +5,7 @@ def get_answer(vectorstore, question, k=6, fetch_k=15, lambda_mult=0.5):
     - configurable k and fetch_k
     - structured context formatting
     """
-
+    print(f"DEBUG: Starting vector search for: {question}", flush=True) # Print 1
     try:
         retriever = vectorstore.as_retriever(
             search_type="mmr",
@@ -17,12 +17,15 @@ def get_answer(vectorstore, question, k=6, fetch_k=15, lambda_mult=0.5):
         )
 
         docs = retriever.invoke(question)
+        print(f"DEBUG: Search finished. Found {len(docs)} docs.", flush=True) # Print 2
 
-    except Exception:
+    except Exception as e:
         # Fallback to normal similarity search
+        print(f"DEBUG: MMR failed, falling back. Error: {e}", flush=True)
         docs = vectorstore.similarity_search(question, k=k)
 
     if not docs:
+        print("DEBUG: No docs found in vectorstore.", flush=True)
         return "No relevant context found."
 
     context = "\n\n".join(
@@ -31,7 +34,8 @@ def get_answer(vectorstore, question, k=6, fetch_k=15, lambda_mult=0.5):
             for i, doc in enumerate(docs)
         ]
     )
-
+    print("DEBUG: Context formatted, returning to generator.", flush=True) # Print 3
+ 
     return context
 
 # def get_answer(vectorstore, question, k=4, score_threshold=None):

@@ -12,10 +12,12 @@ SUMMARY_PROMPT = "Summarize the following conversation in 2-3 concise sentences:
 
 #llm = ChatOllama(model="llama3.1:latest", temperature=0)
 llm = ChatOllama(
-    model="llama3.1:8b",
+    model="llama3.2:1b",
     temperature=0,
     base_url="http://ollama:11434",
-    num_predict=100
+    num_predict=100,      # Keeps responses short/fast
+    keep_alive="4h",      # 🚀 CRITICAL: Keeps model in memory indefinitely
+    num_ctx=2048          # 🚀 Reduces the 'thinking' memory overhead
 )
 
 # Ensure folder exists

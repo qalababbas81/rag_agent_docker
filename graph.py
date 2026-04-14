@@ -22,20 +22,22 @@ db = create_vectorestore(chunks)
 
 #llm = ChatOllama(model="llama3.1:latest", temperature=0)
 llm = ChatOllama(
-    model="llama3.1:8b",
+    model="llama3.2:1b",
     temperature=0,
     base_url="http://ollama:11434",
-    num_predict=100
+    num_predict=100,      # Keeps responses short/fast
+    keep_alive="4h",      # 🚀 CRITICAL: Keeps model in memory indefinitely
+    num_ctx=2048          # 🚀 Reduces the 'thinking' memory overhead
 )
 def validation_router(state):
 
-    if state.get("retry_count", 0) > 2:
-        return "accept"
+    # if state.get("retry_count", 0) > 2:
+    #     return "accept"
 
-    if state["validation"] == "VALID":
-        return "accept"
+    # if state["validation"] == "VALID":
+    #     return "accept"
 
-    return "retry"
+    return "accept"
 
 def validate_answer(state:dict):
 
@@ -71,71 +73,88 @@ def validate_answer(state:dict):
     INVALID
     """
     result = llm.invoke(prompt).content.strip()
-    return {"validation":result}
-
+    print ("validate_answer output =>" + result )
+    return {"validation":result} 
+   
 
 def generate_answer(state: dict):
-    """
-    state = {
-        "messages": [...],  # list of HumanMessage/AIMessage for this user
-        "summary": "..."    # optional summary of older messages
-    }
-    """
-
     last_message = state["messages"][-1]
     question = last_message.content if hasattr(last_message, "content") else str(last_message)
     
-      # 🔹 Run tool ONLY once
     context = state.get("context", None)
+  
+    tool_output = execute_tool(question, rag_db=lambda q: get_answer(db, q))
 
-# Run tool only if context not already present
-    if context is None:
-       context = execute_tool(question, rag_db=lambda q: get_answer(db, q))
+    if isinstance(tool_output, dict):
+        context = tool_output["context"]
+        rows = tool_output.get("rows", None)
+        tool_type = tool_output.get("tool_type", "rag")
+    else:
+            context = tool_output
+            rows = None
+            tool_type = "rag"
+    # 🚀 THE FIX: If SQL, return context immediately. 
+    # This stops the 1b model from mangling the characters.
+    if "Database Query Result" in context:
 
-    # 🔹 Include previous messages (excluding last question) and summary
-    memory_messages = state.get("messages", [])[:-1]
-    memory_summary = state.get("summary", "")
+        print("DEBUG: SQL bypass triggered.", flush=True)
 
-    memory_text = "\n".join([f"{type(m).__name__}: {m.content}" for m in memory_messages])
+        response_content = "### 📊 Database Results\n\n" + "\n".join(
+            [f"- {' | '.join([str(x) for x in r])}" for r in rows]
+        )
+        
+    else:
+        # LLM Path for RAG
+        prompt = f"Context: {context}\n\nQuestion: {question}\n\nAnswer:"
+        response = llm.invoke(prompt)
+        response_content = response.content
 
-    # 🔹 Build LLM prompt with summary + recent messages
-    prompt = f"""
-You are an intelligent assistant.
-
-Answer the user question using the provided context.
-
-The context may come from:
-1. Company documents
-2. SQL database results
-
-Rules:
-- Use ONLY the provided context.
-- If context contains SQL results, interpret them correctly.
-- If the answer is not present, say:
-"Information not available in provided data."
-- Do not invent information.
-
-Context:
-{context}
-
-User Question:
-{question}
-
-Answer clearly.
-"""
-
-    response = llm.invoke(prompt)
-
-    updated_messages = state["messages"] + [AIMessage(content=response.content)]
-
-    retry_count = state.get("retry_count", 0)
+    updated_messages = state["messages"] + [AIMessage(content=response_content)]
+    
     return {
-        "answer": response.content,
-        "context":context,
+        "answer": response_content,
+        "context": context,
         "messages": updated_messages,
-        "retry_count": retry_count + 1
+        "retry_count": state.get("retry_count", 0) + 1
     }
 
+# def generate_answer(state: dict):
+#     last_message = state["messages"][-1]
+#     question = last_message.content if hasattr(last_message, "content") else str(last_message)
+    
+#     context = state.get("context", None)
+#     if context is None:
+#        context = execute_tool(question, rag_db=lambda q: get_answer(db, q))
+
+#     # 🚀 THE FIX: If SQL, return context immediately. 
+#     # This stops the 1b model from mangling the characters.
+#     if "Database Query Result" in context:
+#         print("DEBUG: SQL bypass triggered.", flush=True)
+#         response_content = context.replace("Database Query Result:", "### 📊 Database Results\n")
+#     else:
+#         # LLM Path for RAG
+#         prompt = f"Context: {context}\n\nQuestion: {question}\n\nAnswer:"
+#         response = llm.invoke(prompt)
+#         response_content = response.content
+
+#     updated_messages = state["messages"] + [AIMessage(content=response_content)]
+    
+#     return {
+#         "answer": response_content,
+#         "context": context,
+#         "messages": updated_messages,
+#         "retry_count": state.get("retry_count", 0) + 1
+#     }
+
+def route_after_generate(state: dict):
+    context = state.get("context", "")
+    
+    # 🚀 If context contains SQL results, go straight to the end
+    if "Database Query Result" in context:
+        return "skip_validation"
+    
+    # Otherwise, go to the validation node
+    return "to_validate"
 
 # Build graph
 builder = StateGraph(AgentState)
@@ -145,6 +164,16 @@ builder.add_node("validate",validate_answer)
 builder.set_entry_point("generate")
 
 builder.add_edge("generate", "validate")
+#builder.add_edge("generate", END)
+builder.add_conditional_edges(
+    "generate",
+    route_after_generate,
+    {
+        "skip_validation": END,
+        "to_validate": "validate"
+    }
+)
+
 builder.add_conditional_edges(
     "validate",
     validation_router,
@@ -153,5 +182,6 @@ builder.add_conditional_edges(
         "retry":"generate"
     }
 )
+
 
 graph = builder.compile()

@@ -11,7 +11,7 @@ pip install langchain langchain-community langchain-ollama langgraph
 python -c "import langchain; import langchain_community; print('OK')"
 
 pip install pypdf docx2txt chromadb ollama pyodbc
-python -c "import chromadb, docx2txt, pypdf; print('OK')"
+python -c "import chrdb, docx2txt, pypdf; print('OK')"
 
 uvicorn main:app --reload
 
@@ -22,6 +22,13 @@ ollama pull llama3.1
 docker exec -it ollama /bin/bash
 ls /root/.ollama/models 👉 Expected:blobs manifests
 ollama list
+
+docker exec -it ollama ollama run llama3.2:1b  (Testing ollama)
+
+docker compose up -d app (after making chnanges in py and want to reflect changes to specific container)
+docker compose up -d --build app (If you added a new library to requirements.txt)
+docker compose restart app
+
 
 
 

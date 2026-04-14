@@ -22,10 +22,11 @@ services:
       - ollama
       - sqlserver
     environment:
+      - PYTHONUNBUFFERED=1
       - OLLAMA_HOST=http://ollama:11434
-      - DB_CONNECTION=Driver={ODBC Driver 18 for SQL Server};Server=sqlserver;Database=DemoDB;UID=sa;PWD=KSAcs321;TrustServerCertificate=yes;
-    # volumes:
-    #   - .:/app
+      - DB_CONNECTION=Driver={ODBC Driver 18 for SQL Server};Server=sqlserver;Database=DemoDB;UID=sa;PWD=KSAcs321;TrustServerCertificate=yes;LongAsMax=yes;
+    volumes:
+       - .:/app
 
   ollama:
     image: ollama/ollama

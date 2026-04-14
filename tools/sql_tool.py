@@ -1,20 +1,20 @@
 import pyodbc
 from langchain.tools import tool
 
-conn_str = (
-    "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=CS-DEV-QALAB\\MYSQLSERVER;"
-    "DATABASE=DemoDB;"
-    "Trusted_Connection=yes;"
-)
 # conn_str = (
-#     "DRIVER={ODBC Driver 18 for SQL Server};"
-#     "SERVER=sqlserver;"
+#     "DRIVER={ODBC Driver 17 for SQL Server};"
+#     "SERVER=CS-DEV-QALAB\\MYSQLSERVER;"
 #     "DATABASE=DemoDB;"
-#     "UID=sa;"
-#     "PWD=KSAcs321;"
-#     "TrustServerCertificate=yes;"
+#     "Trusted_Connection=yes;"
 # )
+conn_str = (
+    "DRIVER={ODBC Driver 18 for SQL Server};"
+    "SERVER=sqlserver;"
+    "DATABASE=DemoDB;"
+    "UID=sa;"
+    "PWD=KSAcs321;"
+    "TrustServerCertificate=yes;"
+)
 
 def run_sql_query(query: str):
     """
@@ -23,6 +23,9 @@ def run_sql_query(query: str):
 
     try:
         conn = pyodbc.connect(conn_str)
+        conn.setdecoding(pyodbc.SQL_CHAR, encoding='utf-8')
+        conn.setdecoding(pyodbc.SQL_WCHAR, encoding='utf-8')
+        conn.setencoding(encoding='utf-8')
         cursor = conn.cursor()
 
         cursor.execute(query)
@@ -40,6 +43,7 @@ def run_sql_query(query: str):
         conn.close()
 
         return results
+        #return f"Database Query Results: {results}"
 
     except Exception as e:
         return f"SQL Error: {str(e)}"

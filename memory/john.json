@@ -2,84 +2,84 @@
   "messages": [
     {
       "type": "human",
-      "content": "What are IT guidelines?"
+      "content": "list top 5 Employee"
     },
     {
       "type": "ai",
-      "content": "Based on the provided context, I found the relevant information in Source 1 and Source 2.\n\nFrom Source 1, Section 5 states: \"IT Policy\"\n\nFrom Source 2, Section 5 states: \"Software Installation\"\n\nCombining these two, the IT guidelines are:\n\n* All employees must maintain confidentiality of company information.\n* Disclosure to outside parties is strictly prohibited.\n* Only approved software may be installed on company systems.\n\nTherefore, the IT guidelines are to maintain confidentiality and only install approved software on company systems."
+      "content": "### 📊 Database Results\n\n- 3 | Arham1 | arham@gmail.com | Tehsil1\n- 5 | Maida Rehman | maida@example.com | Pakistan Rawalpindi1\n- 7 | Merva Rehman | mervarehman@gmail.com | Pakistan Rawalpindi\n- 8 | Pagenated | pagination@gmail.com | Paginated Address\n- 1005 | Qalab Abbas | qalabjunjua@gmail.com | Pakistan Rawalpindi"
     },
     {
       "type": "human",
-      "content": "What is leave policy?"
+      "content": "list top 5 employee"
     },
     {
       "type": "ai",
-      "content": "Based on the provided context, specifically from Source 2: Acme Corp - Leave Policy, the leave policy is as follows:\n\n1. Annual Leave: Employees are entitled to 15 days of paid annual leave per year.\n2. Sick Leave: Employees may take up to 10 days of paid sick leave annually with medical documentation if required.\n3. Emergency Leave (no specific details provided)\n\nAdditionally, from Source 1: Carry Forward Policy, unused leave days may be carried forward up to a maximum of 5 days into the next year."
+      "content": "### 📊 Database Results\n\n- 3 | Arham1 | arham@gmail.com | Tehsil1\n- 5 | Maida Rehman | maida@example.com | Pakistan Rawalpindi1\n- 7 | Merva Rehman | mervarehman@gmail.com | Pakistan Rawalpindi\n- 8 | Pagenated | pagination@gmail.com | Paginated Address\n- 1005 | Qalab Abbas | qalabjunjua@gmail.com | Pakistan Rawalpindi"
     },
     {
       "type": "human",
-      "content": "What is leave policy?"
+      "content": "list top 5 Employee"
     },
     {
       "type": "ai",
-      "content": "Based on the provided context, specifically from Source 2: Acme Corp - Leave Policy, the leave policy is as follows:\n\n1. Annual Leave: Employees are entitled to 15 days of paid annual leave per year.\n2. Sick Leave: Employees may take up to 10 days of paid sick leave annually with medical documentation if required.\n3. Emergency Leave (no specific details provided)\n\nAdditionally, from Source 1: Carry Forward Policy, unused leave days may be carried forward up to a maximum of 5 days into the next year."
+      "content": "### 📊 Database Results\n\n- 3 | Arham1 | arham@gmail.com | Tehsil1\n- 5 | Maida Rehman | maida@example.com | Pakistan Rawalpindi1\n- 7 | Merva Rehman | mervarehman@gmail.com | Pakistan Rawalpindi\n- 8 | Pagenated | pagination@gmail.com | Paginated Address\n- 1005 | Qalab Abbas | qalabjunjua@gmail.com | Pakistan Rawalpindi"
     },
     {
       "type": "human",
-      "content": "What is leave policy?"
+      "content": "list top 5 Employee"
     },
     {
       "type": "ai",
-      "content": "Based on the provided context, specifically from Source 2: Acme Corp - Leave Policy, the leave policy is as follows:\n\n1. Annual Leave: Employees are entitled to 15 days of paid annual leave per year.\n2. Sick Leave: Employees may take up to 10 days of paid sick leave annually with medical documentation if required.\n3. Emergency Leave (no specific details provided)\n\nAdditionally, from Source 1: Carry Forward Policy, unused leave days may be carried forward up to a maximum of 5 days into the next year."
+      "content": "### 📊 Database Results\n\n- 3 | Arham1 | arham@gmail.com | Tehsil1\n- 5 | Maida Rehman | maida@example.com | Pakistan Rawalpindi1\n- 7 | Merva Rehman | mervarehman@gmail.com | Pakistan Rawalpindi\n- 8 | Pagenated | pagination@gmail.com | Paginated Address\n- 1005 | Qalab Abbas | qalabjunjua@gmail.com | Pakistan Rawalpindi"
     },
     {
       "type": "human",
-      "content": "What is leave policy?"
+      "content": "what is leave policy"
     },
     {
       "type": "ai",
-      "content": "Based on the provided context, specifically from Source 2: Acme Corp - Leave Policy, I can answer the user's question as follows:\n\nThe company's leave policy includes:\n\n1. Annual Leave: Employees are entitled to 15 days of paid annual leave per year.\n2. Sick Leave: Employees may take up to 10 days of paid sick leave annually with medical documentation if required.\n\nAdditionally, from Source 1: Carry Forward Policy, I can provide more information on unused leave days:\nUnused leave days may be carried forward up to a maximum of 5 days into the next year.\n\nTherefore, the company's leave policy includes both annual and sick leave entitlements, as well as a carry-forward policy for unused leave days."
+      "content": "The Leave Policy mentioned in Sources 3, Source 4, and likely Source 1 (the original content) appears to outline the rules and procedures for taking time off work, specifically:\n\n- Annual Leave: 15 days of paid annual leave per year\n- Sick Leave: up to 10 days of paid sick leave annually with medical documentation if required\n- Emergency Leave: granted with manager approval depending on circumstances\n- Leave Request Procedure:\n    - All leave requests must be submitted at least "
     },
     {
       "type": "human",
-      "content": "SELECT TOP 5 * FROM Employees"
+      "content": "what is company Policy"
     },
     {
       "type": "ai",
-      "content": "The error \"string index out of range\" typically occurs when trying to access a character in a string that does not exist. However, this is an SQL execution error, and the query provided is a SELECT statement.\n\nGiven the context, it's likely that the error occurred because the query being executed was not the one shown (SELECT TOP 5 * FROM Employees). The actual query might be trying to access a column or value as if it were a string, resulting in the \"string index out of range\" error.\n\nTo provide more information, I would need to see the actual SQL query that caused the error. However, based on the provided context, I can suggest checking the actual query being executed and looking for any string operations that might be causing the issue.\n\nIf you'd like to share the actual SQL query or more details about the database schema, I may be able to provide a more specific answer."
+      "content": "Based on the provided source materials, it appears that \"Company Policy\" refers to a set of guidelines or rules that govern the behavior and operations of Acme Corp employees. These policies cover various aspects such as:\n\n* Refund policy\n* Leave policy\n* IT policy\n* Confidentiality\n* Health & Safety\n* Contact information for HR department\n\nThese policies are likely used by employees, managers, and other stakeholders to ensure compliance with company guidelines and to maintain a safe, secure, and productive"
     },
     {
       "type": "human",
-      "content": "what is the leave policy"
+      "content": "list top 5 Employee"
     },
     {
       "type": "ai",
-      "content": "According to Source 1, the Leave Policy states: \"Employees are entitled to 15 days of paid leave per year. Requests must be submitted 2 weeks in advance.\""
+      "content": "### 📊 Database Results\n\n- 3 | Arham1 | arham@gmail.com | Tehsil1\n- 5 | Maida Rehman | maida@example.com | Pakistan Rawalpindi1\n- 7 | Merva Rehman | mervarehman@gmail.com | Pakistan Rawalpindi\n- 8 | Pagenated | pagination@gmail.com | Paginated Address\n- 1005 | Qalab Abbas | qalabjunjua@gmail.com | Pakistan Rawalpindi"
     },
     {
       "type": "human",
-      "content": "give me top 5 employee Data"
+      "content": "what is leave policy"
     },
     {
       "type": "ai",
-      "content": "To provide the top 5 employee data, I will sort the database query result by ID in descending order and select the top 5 records.\n\nHere are the top 5 employee data:\n\n1. ID: 2007, Name: Image Employee, Email: img@gmail.com, Address: Paginated Address\n2. ID: 2006, Name: Abbas, Email: a@gmail.com, Address: Olaya Riyadh\n3. ID: 2005, Name: QQQ, Email: qq@gmail.com, Address: Pakistan Rawat1\n4. ID: 2004, Name: QQ, Email: qq@gmail.com, Address: 123 Main Street23\n5. ID: 1007, Name: Saad, Email: hassan@gmail.com, Address: KSA Riyadh Harra"
+      "content": "The Leave Policy mentioned in Sources 3, Source 4, and likely Source 1 (the original content) appears to outline the rules and procedures for taking time off work, specifically:\n\n- Annual Leave: 15 days of paid annual leave per year\n- Sick Leave: up to 10 days of paid sick leave annually with medical documentation if required\n- Emergency Leave: granted with manager approval depending on circumstances\n- Leave Request Procedure:\n    - All leave requests must be submitted at least "
     },
     {
       "type": "human",
-      "content": "what is leave policy and company policy"
+      "content": "what is company policy"
     },
     {
       "type": "ai",
-      "content": "Based on the provided context, I can answer the user's question as follows:\n\n**Leave Policy:**\nAccording to Source 2: Acme Corp - Leave Policy, the leave policy is as follows:\n\n* Annual Leave: 15 days of paid annual leave per year\n* Sick Leave: up to 10 days of paid sick leave annually with medical documentation if required\n* Emergency Leave: (no specific details provided)\n* Carry Forward Policy: Unused leave days may be carried forward up to a maximum of 5 days into the next year (Source 6)\n\n**Company Policy:**\nAccording to Source 5: Sample Company Policy PDF Content, the company policy is as follows:\n\n* Refund Policy: Customers may request a refund within 30 days of purchase. Refunds will be processed within 7 days.\n\nAdditionally, from Source 4: Confidentiality and IT Policy, we can infer that the company policy also includes:\n\n* Confidentiality: All employees must maintain confidentiality of company information. Disclosure to outside parties is strictly prohibited.\n* IT Policy: Company devices must be used for official purposes only. Personal use should be minimal and comply with IT guidelines.\n* Health & Safety: Employees must follow safety protocols at all times. Accidents must be reported to HR."
+      "content": "Based on the provided sources, it appears that \"Company Policy\" refers to a set of guidelines or rules that govern the behavior and operations of Acme Corp employees. These policies cover various aspects such as:\n\n* Refund Policy\n* Leave Policy (including annual, sick, emergency, and carry-forward leave)\n* IT Guidelines (including device usage, password policy, data security, email policy, and software installation)\n* Confidentiality and confidentiality agreements\n\nThese policies are likely used to ensure that employees understand"
     },
     {
       "type": "human",
-      "content": "What is company policy and what is the leave policy"
+      "content": "list top 3 Employee"
     },
     {
       "type": "ai",
-      "content": "Based on the provided context, I can answer the user's question as follows:\n\n**Company Policy:**\nAccording to Source 3 (IT Policy), company devices must be used for official purposes only. Personal use should be minimal and comply with IT guidelines. Additionally, employees must follow safety protocols at all times and report accidents to HR immediately (Source 3, Health & Safety).\n\n**Leave Policy:**\nAccording to Source 2 (Acme Corp - Leave Policy), the leave policy is as follows:\n\n* Annual Leave: Employees are entitled to 15 days of paid annual leave per year.\n* Sick Leave: Employees may take up to 10 days of paid sick leave annually with medical documentation if required.\n* Emergency Leave: (No specific details provided)\n* Carry Forward Policy: Unused leave days may be carried forward up to a maximum of 5 days into the next year (Source 6, Carry Forward Policy)."
+      "content": "### 📊 Database Results\n\n- 3 | Arham1 | arham@gmail.com | Tehsil1\n- 5 | Maida Rehman | maida@example.com | Pakistan Rawalpindi1\n- 7 | Merva Rehman | mervarehman@gmail.com | Pakistan Rawalpindi"
     }
   ],
-  "summary": "Here is a 3-sentence summary of the conversation:\n\nThe company's leave policy allows employees to take 15 days of paid leave per year, with unused days carrying over up to 5 days into the next year. Requests for leave must be submitted 2 weeks in advance through the HR portal, with emergency leave possible with manager approval. The company's refund policy applies to customers, allowing them to request a refund within 30 days of purchase with original receipts required."
+  "summary": "Here is a summary of the conversation in 3 concise sentences:\n\nThe AIMessage lists employee information, including names, email addresses, and locations. The HumanMessage requests that this list be used to determine the top 5 employees based on certain criteria. The list appears to contain data about various individuals with different job titles and locations."
 }
